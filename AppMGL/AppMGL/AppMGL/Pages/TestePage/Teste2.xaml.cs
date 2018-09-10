@@ -12,9 +12,9 @@ namespace AppMGL.Pages.TestePage
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Teste2 : ContentPage
 	{
-		public Teste2 ()
+		public Teste2()
 		{
-			InitializeComponent ();
+			InitializeComponent();
 		}
 	}
 }

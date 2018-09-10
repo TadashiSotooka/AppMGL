@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AppMGL.Pages.AutenticacaoPage;
+using AppMGL.Pages.TestePage;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -11,7 +13,11 @@ namespace AppMGL
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            //MainPage = new MainPage();
+            //MainPage = new NavigationPage(new Teste1());
+            MainPage = new NavigationPage(new Autenticacao());
+
+            
         }
 
         protected override void OnStart()

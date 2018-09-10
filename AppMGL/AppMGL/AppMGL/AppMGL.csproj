@@ -22,8 +22,6 @@
     <Folder Include="MGLApplication\ApplicationMGL\" />
     <Folder Include="MGLApplication\Request\" />
     <Folder Include="MGLApplication\Return\" />
-    <Folder Include="MGLDatabase\Database\" />
-    <Folder Include="MGLDatabase\Generic\" />
     <Folder Include="MGLDatabase\Model\" />
   </ItemGroup>
 
