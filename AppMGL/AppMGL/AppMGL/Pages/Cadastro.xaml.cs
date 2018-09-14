@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace AppMGL.Pages.TestePage
+namespace AppMGL.Pages
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class Teste1 : ContentPage
+	public partial class Cadastro : ContentPage
 	{
-		public Teste1()
+		public Cadastro ()
 		{
-			InitializeComponent();
+			InitializeComponent ();
 		}
 	}
 }

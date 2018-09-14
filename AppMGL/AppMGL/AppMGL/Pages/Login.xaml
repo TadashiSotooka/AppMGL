@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage NavigationPage.HasNavigationBar="false"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppMGL.Pages.Login"
+             BackgroundColor="{StaticResource claro}">
+    
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" VerticalOptions="Center" Margin="16">
+
+            <Image Source="Icon.png" HorizontalOptions="CenterAndExpand" HeightRequest="200" WidthRequest="200"></Image>
+            <Entry x:Name="txtLogin" Placeholder="Login"  PlaceholderColor="{StaticResource accent}" Margin="0,20,0,0"
+                FontSize="18" TextColor="#555" HorizontalOptions="FillAndExpand"/>
+            <Entry x:Name="txtSenha" Placeholder="Senha" Keyboard="Default"
+           IsPassword="True" FontSize="18" PlaceholderColor="{StaticResource accent}" TextColor="#555"
+           HorizontalOptions="FillAndExpand" />
+
+            <Button Text="Entrar" Clicked="BtnAutenticar" HeightRequest="70" HorizontalOptions="FillAndExpand" Margin="0,20,0,0"
+            BackgroundColor="{StaticResource colorPrimary}" FontSize="18" TextColor="White"/>
+
+            <Label x:Name="lblQuestion" Text="Não tem uma conta ainda?" TextColor="Gray"
+           FontSize="18" FontAttributes="None" Margin="0,20,0,0" HorizontalOptions="CenterAndExpand">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="onClickCadastrar" />
+                </Label.GestureRecognizers>
+            </Label>
+
+            <Label x:Name="lblCadastro" Text="Crie uma conta aqui!"  TextColor="Gray" FontSize="15"
+           FontAttributes="None" HorizontalOptions="CenterAndExpand" >
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="onClickCadastrar" />
+                </Label.GestureRecognizers>
+            </Label>
+
+            <Label x:Name="lblMensagem" Text=""  TextColor="#555" FontSize="15"
+               FontAttributes="Italic" HorizontalOptions="CenterAndExpand" Margin="0,20,0,0"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
