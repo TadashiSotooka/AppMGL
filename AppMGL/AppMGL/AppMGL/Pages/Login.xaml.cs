@@ -19,7 +19,7 @@ namespace AppMGL.Pages
             txtSenha.Text = "0000";
             //txtEmail.Text = "pardal@gmail.com";
             //txtSenha.Text = "1111";
-            //lblMensagem.IsVisible = false;
+            lblMensagem.IsVisible = false;
         }
 
         private async void BtnAutenticar(object sender, EventArgs args)

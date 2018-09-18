@@ -2,11 +2,48 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppMGL.Pages.Cadastro">
+    
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="CADASTRO"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+       
+            <StackLayout Orientation="Vertical" VerticalOptions="Center" Margin="0,16,0,16">
+
+                <Label Text="Efetuar Cadastro"  FontSize="22" TextColor="Black" FontAttributes="Bold" Margin="16,10,16,10" HorizontalOptions="CenterAndExpand"></Label>
+
+                <Label Text="Dados do Jogador" FontSize="18"  TextColor="Black"  FontAttributes="Bold" Margin="16,10,16,5" HorizontalOptions="StartAndExpand" ></Label>
+
+            <Entry x:Name="txtNome" Placeholder="Nome"  PlaceholderColor="{StaticResource cinza}" Margin="16,0,16,0"
+                  FontSize="18" TextColor="Black" HorizontalOptions="FillAndExpand" Keyboard="Text"/>
+
+            <Entry x:Name="txtEmail" Placeholder="Email"  PlaceholderColor="{StaticResource cinza}" Margin="16,0,16,0"
+                  FontSize="18" TextColor="Black" HorizontalOptions="FillAndExpand" Keyboard="Email"/>
+
+                <Picker x:Name="pickerNacionalidade" Title="Selecionar País "
+                   HorizontalOptions="FillAndExpand" SelectedIndexChanged="OnSelectNacionalidade" Margin="16,0,16,0"/>
+
+                <Label Text="Plataforma Principal" FontSize="18" FontAttributes="Bold" TextColor="Black" Margin="16,16,16,5" HorizontalOptions="StartAndExpand" ></Label>
+                
+                <Picker x:Name="pickerPlataforma" Title="Selecionar Plataforma"
+                  HorizontalOptions="FillAndExpand" SelectedIndexChanged="OnSelectPlataforma" Margin="16,0,16,0"/>
+
+            <Entry x:Name="txtTag" Placeholder="Gamertag"  PlaceholderColor="{StaticResource cinza}" Margin="16,0,16,0"
+                  FontSize="18" TextColor="Black" HorizontalOptions="FillAndExpand" Keyboard="Text"/>
+
+                <!--<BoxView Color="{StaticResource accent}" HorizontalOptions="FillAndExpand" HeightRequest="2"></BoxView>-->
+
+                <Label Text="Conta" FontSize="18" FontAttributes="Bold" TextColor="Black" Margin="16,16,16,5" HorizontalOptions="StartAndExpand" ></Label>
+
+            <Entry x:Name="txtLogin" Placeholder="Usuário"  PlaceholderColor="{StaticResource cinza}" Margin="16,0,16,0"
+                  FontSize="18" TextColor="Black" HorizontalOptions="FillAndExpand" />
+
+                <Entry x:Name="txtSenha" Keyboard="Default"
+                  IsPassword="True" Placeholder="Senha"  PlaceholderColor="{StaticResource escuro}"
+                  Margin="16,0,16,0" FontSize="18" TextColor="Black" HorizontalOptions="FillAndExpand" />
+                
+                <Label x:Name="lblMessage" Text="Mensagem" FontSize="15" FontAttributes="Italic" Margin="16,15,16,10" HorizontalOptions="Center"/>
+
+                <Button Text="Criar" Clicked="BtnCadastrar" HeightRequest="60" HorizontalOptions="FillAndExpand" Margin="26,10,26,5"
+                     BackgroundColor="{StaticResource colorPrimary}" FontSize="18" TextColor="White"/>
+               </StackLayout>
+        
     </ContentPage.Content>
 </ContentPage>

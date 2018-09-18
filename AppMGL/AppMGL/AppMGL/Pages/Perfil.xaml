@@ -35,11 +35,11 @@
             <StackLayout Orientation="Horizontal">
 
                 <Label Text="FAZER LOGOUT"  Margin="16,10,16,10" FontSize="14" FontAttributes="Bold" TextColor="Gray"
-               VerticalOptions="Center"/>
-
-                <!-- <Label.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="onClickLogout" />
-                </Label.GestureRecognizers>-->
+               VerticalOptions="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="onClickLogout" />
+                    </Label.GestureRecognizers>
+                </Label>
 
             </StackLayout>
 

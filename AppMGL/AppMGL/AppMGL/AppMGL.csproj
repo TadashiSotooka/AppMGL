@@ -39,10 +39,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="MGLApplication\MApplication\" />
-    <Folder Include="MGLApplication\Model\" />
-    <Folder Include="MGLApplication\Request\" />
-    <Folder Include="MGLApplication\Return\" />
     <Folder Include="MGLDatabase\DAL\" />
     <Folder Include="MGLDatabase\Controller\" />
     <Folder Include="MGLDatabase\Database\" />
