@@ -11,10 +11,10 @@
 
                 <Label Text="Dados do Jogador" FontSize="18"  TextColor="Black"  FontAttributes="Bold" Margin="16,10,16,5" HorizontalOptions="StartAndExpand" ></Label>
 
-            <Entry x:Name="txtNome" Placeholder="Nome"  PlaceholderColor="{StaticResource cinza}" Margin="16,0,16,0"
+                <Entry x:Name="txtNome" Placeholder="Nome"  PlaceholderColor="{StaticResource cinza}" Margin="16,0,16,0"
                   FontSize="18" TextColor="Black" HorizontalOptions="FillAndExpand" Keyboard="Text"/>
 
-            <Entry x:Name="txtEmail" Placeholder="Email"  PlaceholderColor="{StaticResource cinza}" Margin="16,0,16,0"
+                <Entry x:Name="txtEmail" Placeholder="Email"  PlaceholderColor="{StaticResource cinza}" Margin="16,0,16,0"
                   FontSize="18" TextColor="Black" HorizontalOptions="FillAndExpand" Keyboard="Email"/>
 
                 <Picker x:Name="pickerNacionalidade" Title="Selecionar País "
@@ -25,14 +25,14 @@
                 <Picker x:Name="pickerPlataforma" Title="Selecionar Plataforma"
                   HorizontalOptions="FillAndExpand" SelectedIndexChanged="OnSelectPlataforma" Margin="16,0,16,0"/>
 
-            <Entry x:Name="txtTag" Placeholder="Gamertag"  PlaceholderColor="{StaticResource cinza}" Margin="16,0,16,0"
+                <Entry x:Name="txtTag" Placeholder="Gamertag"  PlaceholderColor="{StaticResource cinza}" Margin="16,0,16,0"
                   FontSize="18" TextColor="Black" HorizontalOptions="FillAndExpand" Keyboard="Text"/>
 
                 <!--<BoxView Color="{StaticResource accent}" HorizontalOptions="FillAndExpand" HeightRequest="2"></BoxView>-->
 
                 <Label Text="Conta" FontSize="18" FontAttributes="Bold" TextColor="Black" Margin="16,16,16,5" HorizontalOptions="StartAndExpand" ></Label>
 
-            <Entry x:Name="txtLogin" Placeholder="Usuário"  PlaceholderColor="{StaticResource cinza}" Margin="16,0,16,0"
+                <Entry x:Name="txtLogin" Placeholder="Usuário"  PlaceholderColor="{StaticResource cinza}" Margin="16,0,16,0"
                   FontSize="18" TextColor="Black" HorizontalOptions="FillAndExpand" />
 
                 <Entry x:Name="txtSenha" Keyboard="Default"
