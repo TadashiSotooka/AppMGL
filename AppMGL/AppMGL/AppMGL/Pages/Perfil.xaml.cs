@@ -27,5 +27,17 @@ namespace AppMGL.Pages
             await GoodFoodV4.App.NavegarPaginaMasterDetail(new AutenticacaoPage(), "modal");*/
 
         }
+
+        private async void onClickTeste(object sender, EventArgs args)
+        {
+            //await Navigation.PushModalAsync(new Teste1());
+            await DisplayAlert("Clicado", "Sair", "OK");
+
+            /*ClienteApplication clienteApplication = new ClienteApplication();
+            clienteApplication.DeleteAll();
+
+            await GoodFoodV4.App.NavegarPaginaMasterDetail(new AutenticacaoPage(), "modal");*/
+
+        }
     }
 }

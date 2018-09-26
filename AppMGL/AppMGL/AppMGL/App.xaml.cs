@@ -37,7 +37,8 @@ namespace AppMGL
 
             //MainPage = new AppMGL.MainPage();
             MainPage = new NavigationPage(new Login());
-          
+            //MainPage = new NavigationPage(new Teste2());
+
         }
 
         protected override void OnStart()

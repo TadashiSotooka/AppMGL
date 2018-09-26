@@ -17,7 +17,11 @@
             <StackLayout Orientation="Horizontal">
 
                 <Label Text="Teste"  FontSize="14" Margin="16,10,16,10"
-               FontAttributes="Bold" TextColor="Gray" VerticalOptions="Center" />
+               FontAttributes="Bold" TextColor="Gray" VerticalOptions="Center" >
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="onClickTeste" />
+                </Label.GestureRecognizers>
+                </Label>
 
             </StackLayout>
 
