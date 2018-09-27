@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppMGL.Pages.Teste">
+
+    <StackLayout Orientation="Vertical" Margin="16">
+        <ListView x:Name="ListView" HasUnevenRows="true" Margin="0,0,0,4" SeparatorVisibility="None">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Vertical"  Margin="0,0,0,6">
+                            <Label Text="{Binding idUsuario}" ></Label>
+                            <Label Text="{Binding nomeUsuario}" TextColor="Black" FontSize="14" Margin="8" VerticalOptions="StartAndExpand"/>
+                            <Label Text="{Binding email}" TextColor="Black" FontSize="14" Margin="8" VerticalOptions="StartAndExpand"/>
+                            <Label Text="{Binding dataAniversario}" TextColor="Black" FontSize="14" Margin="8" VerticalOptions="StartAndExpand"/>
+                            <Label Text="{Binding nomePlataforma}" TextColor="Black" FontSize="14" Margin="8" VerticalOptions="StartAndExpand"/>
+                            <Label Text="{Binding tagJogador}" TextColor="Black" FontSize="14" Margin="8" VerticalOptions="StartAndExpand"/>
+                            <!--<TextCell Text="{Binding nomeUsuario}"></TextCell>-->
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>

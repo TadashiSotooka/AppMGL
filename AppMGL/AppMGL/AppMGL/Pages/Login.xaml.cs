@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AppMGL.MGLApplication.MApplication;
+using AppMGL.MGLDatabase.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,9 +29,9 @@ namespace AppMGL.Pages
             //await Navigation.PushAsync(new Home());
             //await Navigation.PushAsync(new Teste1());
             //await Navigation.PushModalAsync(new Home());
-            await Navigation.PushModalAsync(new MainPage());
-
-            /*var minhaConexao = Plugin.Connectivity.CrossConnectivity.Current.IsConnected;
+            //await Navigation.PushModalAsync(new MainPage());
+           
+            var minhaConexao = Plugin.Connectivity.CrossConnectivity.Current.IsConnected;
             if (minhaConexao.Equals(true))
             {
                 lblCadastro.IsVisible = false;
@@ -38,7 +40,7 @@ namespace AppMGL.Pages
 
                 Usuario usuario = new Usuario();
 
-                AutenticacaoApplication autApp = new AutenticacaoApplication();
+                AutenticarApplication autApp = new AutenticarApplication();
 
                 lblMensagem.Text = "Aguarde, validando usuário";
                 await Task.Delay(50);
@@ -49,8 +51,10 @@ namespace AppMGL.Pages
                 if (usuario.autenticado == "S")
                 {
                     // CriarUsuario(cliente);
-                    UsuarioApplication usuarioApplication = new UsuarioApplication();
-                    usuarioApplication.Add(usuario);
+                    //UsuarioApplication usuarioApplication = new UsuarioApplication();
+                    //usuarioApplication.Add(usuario);
+                    var Apc = ((App)Application.Current).Conexao.Insert(usuario);
+                    //((App)Application.Current).Conexao.Insert(new Usuario { Info = $"{DateTime.Now:yyyy-MM-dd HH:mm:ss.ffff}" });
                     await Navigation.PushModalAsync(new MainPage());
                     lblMensagem.Text = "";
                 }
@@ -66,7 +70,7 @@ namespace AppMGL.Pages
             else
             {
                 await DisplayAlert("Alerta", "Sem conexão com a internet!", "OK");
-            }*/
+            }
         }
 
         private async void onClickCadastrar(object sender, EventArgs args)

@@ -7,7 +7,7 @@ namespace AppMGL.MGLDatabase.Model
 {
     public class Usuario
     {
-        [PrimaryKey, AutoIncrement]
+        [PrimaryKey]
         public string idUsuario { get; set; }
         public string nomeUsuario { get; set; }
         public string nomePais { get; set; }

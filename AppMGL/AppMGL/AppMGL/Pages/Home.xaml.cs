@@ -1,4 +1,6 @@
 ﻿using AppMGL.MGLApplication.MApplication;
+//using AppMGL.MGLApplication.Model;
+using AppMGL.MGLDatabase.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,11 +15,14 @@ namespace AppMGL.Pages
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Home : ContentPage
 	{
-        public string idUsuario = "1";
-		public Home ()
+        //public string idUsuario = "1";
+        public string codUsuario = "1";
+       
+        public Home ()
 		{
 			InitializeComponent ();
             DesabilitarSelecao();
+
         }
 
         protected override void OnAppearing()
@@ -34,10 +39,12 @@ namespace AppMGL.Pages
             };
         }
 
-        private void ListarJogos()
+        private async void ListarJogos()
         {
+            //Usuario usuario = new Usuario();
+            //codUsuario = usuario.idUsuario;
             ListaApplication listaApplication = new ListaApplication();
-            var retorno = listaApplication.RetornarListaUsuario(idUsuario);
+            var retorno  = await Task.Run(() => listaApplication.RetornarListaUsuario(codUsuario));
 
             if (retorno.message.Equals(""))
             {
@@ -54,10 +61,13 @@ namespace AppMGL.Pages
 
         private async void OnClickSair(object sender, EventArgs e)
         {
-            await DisplayAlert("Clicado", "Sair", "OK");
+            //await DisplayAlert("Clicado", "Sair", "OK");
 
+            ((App)Application.Current).Conexao.DeleteAll<Usuario>();
+            await AppMGL.App.NavegarPaginaMasterDetail(new Login(), "modal");
             /*UsuarioApplication usuarioApplication = new UsuarioApplication();
             usuarioApplication.DeleteAll();
+
 
             await AppMGL.App.NavegarPaginaMasterDetail(new Autenticacao(), "modal");*/
         }

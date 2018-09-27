@@ -9,7 +9,7 @@ namespace AppMGL.MGLApplication.MApplication
 {
     public class ListaApplication
     {
-        public ListaReturn RetornarListaUsuario(string idUsuario)
+        public ListaReturn RetornarListaUsuario(string codUsuario)
         {
 
             ListaReturn retorno = new ListaReturn();
@@ -18,7 +18,7 @@ namespace AppMGL.MGLApplication.MApplication
 
             client.MaxResponseContentBufferSize = 256000;
 
-            var uri = new Uri("http://tccmgl-com.umbler.net/webservices/mglservices/lista/readByUsuario.php?idUsuario=" + idUsuario);
+            var uri = new Uri("http://tccmgl-com.umbler.net/webservices/mglservices/lista/readByUsuario.php?idUsuario=" + codUsuario);
 
             //var content = new StringContent(json, Encoding.UTF8, "application/json");
 

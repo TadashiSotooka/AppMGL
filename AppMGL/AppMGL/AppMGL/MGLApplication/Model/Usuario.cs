@@ -36,3 +36,5 @@ namespace AppMGL.MGLApplication.Model
             mensagem = "";
         }
     }
+
+}

@@ -1,6 +1,7 @@
-﻿using AppMGL.MGLApplication.Model;
+﻿//using AppMGL.MGLApplication.Model;
 using AppMGL.MGLApplication.Request;
 using AppMGL.MGLApplication.Return;
+using AppMGL.MGLDatabase.Model;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;

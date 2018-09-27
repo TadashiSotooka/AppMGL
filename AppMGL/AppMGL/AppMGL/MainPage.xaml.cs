@@ -18,5 +18,22 @@ namespace AppMGL
             App.MasterDetail = this;
         }
 
+        protected override bool OnBackButtonPressed()
+        {
+            if (App.PosLogin == "S")
+            {
+                // If you want to stop the back button
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            // If you want to continue going back
+            //base.OnBackButtonPressed();
+            //return false;
+
+        }
+
     }
 }

@@ -30,8 +30,8 @@ namespace AppMGL.Pages
 
         private async void onClickTeste(object sender, EventArgs args)
         {
-            //await Navigation.PushModalAsync(new Teste1());
-            await DisplayAlert("Clicado", "Sair", "OK");
+            await Navigation.PushModalAsync(new Teste());
+            //await DisplayAlert("Clicado", "Sair", "OK");
 
             /*ClienteApplication clienteApplication = new ClienteApplication();
             clienteApplication.DeleteAll();
