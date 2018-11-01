@@ -3,42 +3,133 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppMGL.Pages.Perfil"
              Title="My Game List"
-             BackgroundColor="{StaticResource claro}">
+             BackgroundColor="{StaticResource icons}">
     <ContentPage.Content>
         <StackLayout Orientation="Vertical">
 
-            <StackLayout Orientation="Vertical" BackgroundColor="{StaticResource colorPrimary}">
-                <Image Source="Icon.png" HorizontalOptions="StartAndExpand" Margin="16,32,16,0"
+            <StackLayout Orientation="Vertical" BackgroundColor="{StaticResource primary}">
+                <Image Source="user.png" HorizontalOptions="StartAndExpand" Margin="16,32,16,0"
                    HeightRequest="72" WidthRequest="72"/>
                 <Label  x:Name="lbNome" Text="Tadashi Sotooka" FontSize="14" HorizontalOptions="StartAndExpand" Margin="16,5,16,5"
                FontAttributes="None" TextColor="White"/>
             </StackLayout>
-
+            <!-- // --> 
             <StackLayout Orientation="Horizontal">
 
-                <Label Text="Teste"  FontSize="14" Margin="16,10,16,10"
+                <Label Text="Minha Lista"  FontSize="14" Margin="16,10,16,10"
                FontAttributes="Bold" TextColor="Gray" VerticalOptions="Center" >
-                <Label.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="onClickTeste" />
-                </Label.GestureRecognizers>
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="onClickLista" />
+                    </Label.GestureRecognizers>
                 </Label>
 
             </StackLayout>
 
-            <BoxView Color="{StaticResource accent}" HorizontalOptions="FillAndExpand" HeightRequest="1"/>
-
             <StackLayout Orientation="Horizontal">
 
-                <Label Text="PERFIL" FontSize="14" Margin="16,10,16,10"
-               FontAttributes="Bold" TextColor="Gray" VerticalOptions="Center"/>
+                <Label Text="Procurar"  FontSize="14" Margin="16,10,16,10"
+               FontAttributes="Bold" TextColor="Gray" VerticalOptions="Center" >
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="onClickProcurar" />
+                    </Label.GestureRecognizers>
+                </Label>
 
             </StackLayout>
 
-            <BoxView Color="{StaticResource accent}" HorizontalOptions="FillAndExpand" HeightRequest="1"/>
+            <StackLayout Orientation="Horizontal">
+
+                <Label Text="Favoritos"  FontSize="14" Margin="16,10,16,10"
+               FontAttributes="Bold" TextColor="Gray" VerticalOptions="Center" >
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="onClickFavorito" />
+                    </Label.GestureRecognizers>
+                </Label>
+
+            </StackLayout>
 
             <StackLayout Orientation="Horizontal">
 
-                <Label Text="FAZER LOGOUT"  Margin="16,10,16,10" FontSize="14" FontAttributes="Bold" TextColor="Gray"
+                <Label Text="Lista de Desejos"  FontSize="14" Margin="16,10,16,10"
+               FontAttributes="Bold" TextColor="Gray" VerticalOptions="Center" >
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="onClickDesejo" />
+                    </Label.GestureRecognizers>
+                </Label>
+
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+
+                <Label Text="Amigos"  FontSize="14" Margin="16,10,16,10"
+               FontAttributes="Bold" TextColor="Gray" VerticalOptions="Center" >
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="onClickAmigos" />
+                    </Label.GestureRecognizers>
+                </Label>
+
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+
+                <Label Text="Procurar Jogador"  FontSize="14" Margin="16,10,16,10"
+               FontAttributes="Bold" TextColor="Gray" VerticalOptions="Center" >
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="onClickJogador" />
+                    </Label.GestureRecognizers>
+                </Label>
+
+            </StackLayout>
+
+            
+            <BoxView Color="{StaticResource accent}" HorizontalOptions="FillAndExpand" HeightRequest="1"/>
+
+           <!-- <StackLayout Orientation="Horizontal">
+
+                <Label Text="Teste"  FontSize="14" Margin="16,10,16,10"
+               FontAttributes="Bold" TextColor="Gray" VerticalOptions="Center" >
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="onClickTeste" />
+                    </Label.GestureRecognizers>
+                </Label>
+
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+
+                <Label Text="TesteCard"  FontSize="14" Margin="16,10,16,10"
+               FontAttributes="Bold" TextColor="Gray" VerticalOptions="Center" >
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="onClickTesteCard" />
+                    </Label.GestureRecognizers>
+                </Label>
+
+            </StackLayout>-->
+
+            <StackLayout Orientation="Horizontal">
+
+                <Label Text="Perfil" FontSize="14" Margin="16,10,16,10"
+               FontAttributes="Bold" TextColor="Gray" VerticalOptions="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="onClickPerfil" />
+                    </Label.GestureRecognizers>
+                </Label>
+
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+
+                <Label Text="Sobre/Suporte" FontSize="14" Margin="16,10,16,10"
+               FontAttributes="Bold" TextColor="Gray" VerticalOptions="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="onClickPerfil" />
+                    </Label.GestureRecognizers>
+                </Label>
+
+            </StackLayout>
+            
+            <StackLayout Orientation="Horizontal">
+
+                <Label Text="Logout"  Margin="16,10,16,10" FontSize="14" FontAttributes="Bold" TextColor="Gray"
                VerticalOptions="Center">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Tapped="onClickLogout" />
@@ -47,8 +138,8 @@
 
             </StackLayout>
 
-            <BoxView Color="{StaticResource accent}" HorizontalOptions="FillAndExpand" HeightRequest="1"/>
-
+            <!--<BoxView Color="{StaticResource accent}" HorizontalOptions="FillAndExpand" HeightRequest="1"/>-->
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

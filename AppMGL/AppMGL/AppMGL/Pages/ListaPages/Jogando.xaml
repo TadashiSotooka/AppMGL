@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppMGL.Pages.ListaPages.Jogando"
+             Title="Jogando">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" Margin="5">
+            <!--- <Label Text="Jogos"  FontSize="22" TextColor="Black" FontAttributes="Bold" Margin="16,10,16,10" HorizontalOptions="CenterAndExpand"></Label>-->
+            <ListView x:Name="listaJogos" HasUnevenRows="true" Margin="0,0,0,4" SeparatorVisibility="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.ContextActions>
+                                <MenuItem Clicked="OnInfo" CommandParameter="{Binding .}"   Text="Info" />
+                                <MenuItem Clicked="OnDelete" CommandParameter="{Binding .}"  Text="Deletar"  />
+                            </ViewCell.ContextActions>
+                            <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
+                                <Frame.OutlineColor>
+                                    <OnPlatform x:TypeArguments="Color" Android="Gray" iOS="Gray"/>
+                                </Frame.OutlineColor>
+                                <Frame.Margin>
+                                    <OnPlatform x:TypeArguments="Thickness" Android="7" iOS="7"/>
+                                </Frame.Margin>
+                                <Frame.Padding>
+                                    <OnPlatform x:TypeArguments="Thickness" Android="5" iOS="5"/>
+                                </Frame.Padding>
+
+                                <StackLayout Orientation="Horizontal">
+                                    <Grid VerticalOptions="CenterAndExpand" Padding="5"
+                                            HorizontalOptions="FillAndExpand" BackgroundColor="Transparent">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="30"></RowDefinition>
+                                            <RowDefinition Height="20"></RowDefinition>
+                                            <RowDefinition Height="20"></RowDefinition>
+                                            <RowDefinition Height="20"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="90"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Image Grid.Row="0" Grid.RowSpan="4" Grid.Column="0" Source="{Binding imagem}" 
+                                           Aspect="AspectFill"/>
+
+                                        <Label Grid.Row="0" Grid.Column="1" Text="{Binding nomeJogo, Mode = TwoWay}" 
+                                           HorizontalTextAlignment="Center" LineBreakMode="TailTruncation"
+                                           FontAttributes="Bold" TextColor="Black" FontSize="Medium"></Label>
+
+                                        <StackLayout Orientation="Horizontal"  HorizontalOptions="CenterAndExpand" Grid.Row="1" Grid.Column="1">
+                                            <Label Text="Lançamento:" />
+                                            <Label Text="{Binding dataLancamento, Mode = TwoWay}" 
+                                           HorizontalTextAlignment="Center" FontSize="Small"  TextColor="Gray" 
+                                           LineBreakMode="TailTruncation" FontAttributes="None"></Label>
+                                        </StackLayout>
+
+                                        <StackLayout Orientation="Horizontal"  HorizontalOptions="CenterAndExpand" Grid.Row="2" Grid.Column="1">
+                                            <Label Text="Nota:" />
+                                            <Label Text="{Binding notaGeral, Mode = TwoWay}" 
+                                           HorizontalTextAlignment="Center" FontSize="Small"  TextColor="Gray" 
+                                           LineBreakMode="TailTruncation" FontAttributes="None"></Label>
+                                            <Label Text="/ 10" />
+                                        </StackLayout>
+
+                                        <StackLayout Orientation="Horizontal"  HorizontalOptions="CenterAndExpand" Grid.Row="3" Grid.Column="1">
+                                            <Label Text="Gênero:" />
+                                            <Label Text="{Binding trailer, Mode = TwoWay}" 
+                                           HorizontalTextAlignment="Center" FontSize="Small"  TextColor="Gray" 
+                                           LineBreakMode="TailTruncation" FontAttributes="None"></Label>
+                                        </StackLayout>
+
+                                    </Grid>
+
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Recarregar" Activated="OnClickRecarregar"  Order="Secondary"/>
+        <ToolbarItem Text="Sair" Activated="OnClickSair" Order="Secondary"/>
+    </ContentPage.ToolbarItems>
+
+</ContentPage>

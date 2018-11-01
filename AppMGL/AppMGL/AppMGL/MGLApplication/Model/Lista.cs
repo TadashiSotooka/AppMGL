@@ -16,7 +16,14 @@ namespace AppMGL.MGLApplication.Model
         public string dataLancamento { get; set; }
         public string desenvolvedora { get; set; }
         public string estudio { get; set; }
-        public string imagem{ get; set; }
+        public string imagem { get; set; }
+        public string trailer { get; set; }
+        public string descricaoJogo { get; set; }
+
+        public string descricaoFavorito { get; set; }
+        public string DescricaoCategoria { get; set; }
+        
+            
 
     }
 }

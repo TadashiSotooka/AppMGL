@@ -1,7 +1,5 @@
 ﻿using AppMGL.MGLApplication.MApplication;
 using AppMGL.MGLApplication.Model;
-using AppMGL.MGLApplication.Return;
-//using AppMGL.MGLDatabase.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,23 +9,21 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace AppMGL.Pages
+namespace AppMGL.Pages.ListaPages
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class Home : ContentPage
+	public partial class Favorito : ContentPage
 	{
 
         public string codUsuario;
 
-        public Home ()
+        public Favorito ()
 		{
 			InitializeComponent ();
             DesabilitarSelecao();
         }
 
-
-
-    protected override void OnAppearing()
+        protected override void OnAppearing()
         {
             base.OnAppearing();
             ListarJogos();
@@ -47,8 +43,8 @@ namespace AppMGL.Pages
             var usuario = ((App)Application.Current).Conexao.Table<Usuario>().ToList().First();
             codUsuario = usuario.idUsuario;
 
-            ListaApplication listaApplication = new ListaApplication();
-            var retorno  = await Task.Run(() => listaApplication.RetornarListaUsuario(codUsuario));
+            ListaFavoritoApplication listaApplication = new ListaFavoritoApplication();
+            var retorno = await Task.Run(() => listaApplication.RetornarListaUsuario(codUsuario));
 
             if (retorno.message.Equals(""))
             {
@@ -68,8 +64,8 @@ namespace AppMGL.Pages
         {
 
             await DisplayAlert("Clicado", "Info", "OK");
-        }        
-        
+        }
+
         // -- 
 
         private async void OnClickRecarregar(object sender, EventArgs e)

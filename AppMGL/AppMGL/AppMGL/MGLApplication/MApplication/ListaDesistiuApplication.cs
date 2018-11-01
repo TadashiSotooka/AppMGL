@@ -7,7 +7,7 @@ using System.Text;
 
 namespace AppMGL.MGLApplication.MApplication
 {
-    public class ListaApplication
+    public class ListaDesistiuApplication
     {
         public ListaReturn RetornarListaUsuario(string codUsuario)
         {
@@ -18,7 +18,7 @@ namespace AppMGL.MGLApplication.MApplication
 
             client.MaxResponseContentBufferSize = 256000;
 
-            var uri = new Uri("http://tccmgl-com.umbler.net/webservices/mglservices/lista/readByUsuario.php?idUsuario=" + codUsuario);
+            var uri = new Uri("http://tccmgl-com.umbler.net/webservices/mglservices/lista/readDesistiu.php?idUsuario=" + codUsuario);
 
             var response = client.GetAsync(uri).Result;
             if (response.IsSuccessStatusCode)

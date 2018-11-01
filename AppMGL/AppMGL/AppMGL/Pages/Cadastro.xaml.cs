@@ -116,10 +116,10 @@ namespace AppMGL.Pages
                 if (message.message.Equals("Usuario registrado."))
                 {
                     lblMessage.IsVisible = false;
-                    //await Navigation.PopAsync();
                     await DisplayAlert("Bem vindo!", "Sua conta foi criada com sucesso!", "OK");
                     await Navigation.PushModalAsync(new Login());
                 }
+
                 else
                 {
                     lblMessage.IsVisible = false;

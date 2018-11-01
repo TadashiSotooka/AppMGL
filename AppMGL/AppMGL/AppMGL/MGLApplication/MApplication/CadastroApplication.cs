@@ -35,8 +35,8 @@ namespace AppMGL.MGLApplication.MApplication
                     retorno = JsonConvert.DeserializeObject<CadastroReturn>(content2.Result);
                 }
 
-
             }
+
             catch (Exception ex)
             {
 

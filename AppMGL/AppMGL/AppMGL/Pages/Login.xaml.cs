@@ -26,11 +26,7 @@ namespace AppMGL.Pages
 
         private async void BtnAutenticar(object sender, EventArgs args)
         {
-            //await Navigation.PushAsync(new Home());
-            //await Navigation.PushAsync(new Teste1());
-            //await Navigation.PushModalAsync(new Home());
-            //await Navigation.PushModalAsync(new MainPage());
-           
+            
             var minhaConexao = Plugin.Connectivity.CrossConnectivity.Current.IsConnected;
             if (minhaConexao.Equals(true))
             {
@@ -38,26 +34,22 @@ namespace AppMGL.Pages
                 lblQuestion.IsVisible = false;
                 lblMensagem.IsVisible = true;
 
-                Usuario usuario = new Usuario();
-
+                Usuario usuario = new Usuario(); 
                 AutenticarApplication autApp = new AutenticarApplication();
 
                 lblMensagem.Text = "Aguarde, validando usuário";
                 await Task.Delay(50);
 
-
                 usuario = autApp.Autenticar(txtLogin.Text, txtSenha.Text);
 
                 if (usuario.autenticado == "S")
                 {
-                    // CriarUsuario(cliente);
-                    //UsuarioApplication usuarioApplication = new UsuarioApplication();
-                    //usuarioApplication.Add(usuario);
+
                     var Apc = ((App)Application.Current).Conexao.Insert(usuario);
-                    //((App)Application.Current).Conexao.Insert(new Usuario { Info = $"{DateTime.Now:yyyy-MM-dd HH:mm:ss.ffff}" });
                     await Navigation.PushModalAsync(new MainPage());
                     lblMensagem.Text = "";
                 }
+
                 else
                 {
                     lblMensagem.Text = "";

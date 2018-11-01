@@ -34,26 +34,21 @@ namespace AppMGL.MGLApplication.MApplication
 
                 AutenticarRequest autenticacaoRequest = new AutenticarRequest();
                 AutenticarReturn retorno = new AutenticarReturn();
-                //UsuarioReturn usuarioReturn = new UsuarioReturn();
 
                 autenticacaoRequest.login = login.Trim();
                 autenticacaoRequest.senha = senha.Trim();
 
                 var json = JsonConvert.SerializeObject(autenticacaoRequest);
-
                 HttpClient client = new HttpClient();
-
                 client.MaxResponseContentBufferSize = 256000;
 
                 var uri = new Uri("http://tccmgl-com.umbler.net/webservices/mglservices/service/service_usuario.php");
-
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
 
                 var response = client.PostAsync(uri, content).Result;
                 if (response.IsSuccessStatusCode)
                 {
                     var content2 = response.Content.ReadAsStringAsync();
-
                     retorno = JsonConvert.DeserializeObject<AutenticarReturn>(content2.Result);
                 }
 
@@ -67,11 +62,10 @@ namespace AppMGL.MGLApplication.MApplication
                     usuario.tagJogador = retorno.usuario.tagJogador;
                     usuario.nomePlataforma = retorno.usuario.nomePlataforma;
                     usuario.login = retorno.usuario.login;
-
                     usuario.mensagem = "Usuário Autenticado";
                     usuario.autenticado = "S";
-
                 }
+
                 else
                 {
                     usuario.mensagem = "Email ou Senha Invalidos";
