@@ -9,12 +9,12 @@
             <ListView x:Name="listaJogos" HasUnevenRows="true" Margin="0,0,0,4" SeparatorVisibility="None">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <ViewCell>
-                            <ViewCell.ContextActions>
+                        <ViewCell >
+                            <!--<ViewCell.ContextActions>
                                 <MenuItem Clicked="OnInfo" CommandParameter="{Binding .}"   Text="Info" />
                                 <MenuItem Clicked="OnDelete" CommandParameter="{Binding .}"  Text="Deletar"  />
-                            </ViewCell.ContextActions>
-                            <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
+                            </ViewCell.ContextActions>-->
+                            <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White" >
                                 <Frame.OutlineColor>
                                     <OnPlatform x:TypeArguments="Color" Android="Gray" iOS="Gray"/>
                                 </Frame.OutlineColor>
@@ -26,6 +26,11 @@
                                 </Frame.Padding>
 
                                 <StackLayout Orientation="Horizontal">
+
+                                    <StackLayout.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="onTapped"/>
+                                    </StackLayout.GestureRecognizers>
+                                    
                                     <Grid VerticalOptions="CenterAndExpand" Padding="5"
                                             HorizontalOptions="FillAndExpand" BackgroundColor="Transparent">
                                         <Grid.RowDefinitions>

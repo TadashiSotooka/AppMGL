@@ -1,6 +1,8 @@
 ﻿using AppMGL.MGLApplication.MApplication;
 using AppMGL.MGLApplication.Model;
 using AppMGL.MGLApplication.Return;
+using AppMGL.Pages.DetalhePages;
+using AppMGL.Pages.ListaPages;
 //using AppMGL.MGLDatabase.Model;
 using System;
 using System.Collections.Generic;
@@ -56,9 +58,32 @@ namespace AppMGL.Pages
             }
         }
 
+        private async void onTapped(object sender, EventArgs args)
+        {
+            var action = await DisplayActionSheet("", "Cancel", "", "Detalhes do Jogo", "Trocar Status do Jogo", "Adicionar aos Favoritos", "Excluir da Lista");
+            if (action == "Detalhes do Jogo")
+            {
+                //await Navigation.PushModalAsync(new Teste());
+                await AppMGL.App.NavegarPaginaMasterDetail(new DetalheJogoLista(), "");
+                //await Navigation.PushAsync(new Home());
+            }
+            if (action == "Trocar Status do Jogo")
+            {
+                await AppMGL.App.NavegarPaginaMasterDetail(new StatusJogo(), "");
+            }
+            if (action == "Adicionar aos Favoritos")
+            {
+                await AppMGL.App.NavegarPaginaMasterDetail(new Home(), "sinc");
+            }
+            if (action == "Excluir da Lista")
+            {
+                await AppMGL.App.NavegarPaginaMasterDetail(new Home(), "sinc");
+            }
+
+        }
 
 
-        private async void OnInfo(object sender, EventArgs e)
+        /*private async void OnInfo(object sender, EventArgs e)
         {
 
             await DisplayAlert("Clicado", "Info", "OK");
@@ -68,8 +93,8 @@ namespace AppMGL.Pages
         {
 
             await DisplayAlert("Clicado", "Info", "OK");
-        }        
-        
+        }*/
+
         // -- 
 
         private async void OnClickRecarregar(object sender, EventArgs e)

@@ -1,4 +1,5 @@
 ﻿using AppMGL.Pages.ListaPages;
+using AppMGL.Pages.ProcurarPages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -55,11 +56,15 @@ namespace AppMGL.Pages
 
         private async void onClickProcurar(object sender, EventArgs args)
         {
-            var action = await DisplayActionSheet("Procurar", "Cancel", "", "Buscar por Jogo", "Gênero", "Top Jogos", 
-                                                    "Mais Populares", "Lançamentos", "Em Breve");
+            var action = await DisplayActionSheet( "Procurar", "Cancel", "", "Buscar por Jogo", "Todos os Jogos", 
+                                                  "Gênero", "Top Jogos", "Mais Populares", "Lançamentos", "Em Breve" );
             if (action == "Buscar por Jogo")
             {
                 await Navigation.PushModalAsync(new Teste());
+            }
+            if (action == "Todos os Jogos")
+            {
+                await AppMGL.App.NavegarPaginaMasterDetail(new TodosJogos(), "");
             }
             if (action == "Gênero")
             {
@@ -108,7 +113,9 @@ namespace AppMGL.Pages
 
         private async void onClickDesejo(object sender, EventArgs args)
         {
-            await DisplayAlert("Clicado", "Sair", "OK");
+            //await DisplayAlert("Clicado", "Sair", "OK");
+
+            await AppMGL.App.NavegarPaginaMasterDetail(new ListaDesejo(), "");
 
             /*ClienteApplication clienteApplication = new ClienteApplication();
             clienteApplication.DeleteAll();
