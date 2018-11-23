@@ -59,6 +59,12 @@ namespace AppMGL.Pages.ListaPages
             await DisplayAlert("Clicado", "Info", "OK");
         }
 
+        private async void OnAdd(object sender, EventArgs e)
+        {
+
+            await DisplayAlert("Clicado", "Info", "OK");
+        }
+
         private async void OnDelete(object sender, EventArgs e)
         {
             var mi = ((MenuItem)sender);

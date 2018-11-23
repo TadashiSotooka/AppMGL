@@ -1,5 +1,7 @@
 ﻿using AppMGL.MGLApplication.MApplication;
 using AppMGL.MGLApplication.Model;
+using AppMGL.MGLApplication.Request;
+using AppMGL.MGLApplication.Return;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +16,7 @@ namespace AppMGL.Pages.ListaPages
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Favorito : ContentPage
 	{
-
+        ListaReturn message = new ListaReturn();
         public string codUsuario;
 
         public Favorito ()
@@ -54,16 +56,45 @@ namespace AppMGL.Pages.ListaPages
 
 
 
-        private async void OnInfo(object sender, EventArgs e)
+        private async void OnDetalhe(object sender, EventArgs e)
         {
 
             await DisplayAlert("Clicado", "Info", "OK");
         }
 
-        private async void OnDelete(object sender, EventArgs e)
+        private async void OnTroca(object sender, EventArgs e)
         {
 
-            await DisplayAlert("Clicado", "Info", "OK");
+            //await DisplayAlert("Clicado", "Info", "OK");
+            //Button button = sender as Button;
+            //string id = button.CommandParameter.ToString();
+            var mi = ((MenuItem)sender);
+            var myJogo = mi.CommandParameter as Lista;
+
+            var usuario = ((App)Application.Current).Conexao.Table<Usuario>().ToList().First();
+            var codUsuario = usuario.idUsuario;
+
+            ListaRequest listaRequest = new ListaRequest();
+            listaRequest.idUsuario = Convert.ToInt32(codUsuario);
+            listaRequest.idJogo = Convert.ToInt32(myJogo.idJogo);
+            listaRequest.idFavorito = 2;
+
+            //AddDesejoApplication addDesejoApplication = new AddDesejoApplication();
+            //var message = addDesejoApplication.addDesejo(listaRequest);
+
+            FavoritoApplication favoritoApplication = new FavoritoApplication();
+            var message = favoritoApplication.addFavorito(listaRequest);
+
+            if (message.message.Equals("Status do Favorito Trocado!"))
+            {
+                //await AppMGL.App.NavegarPaginaMasterDetail(new Home(), "sinc");
+                //listaJogos.ItemsSource = null;
+                OnAppearing();
+            }
+            else
+            {
+                await DisplayAlert("Alerta!", message.message, "OK");
+            }
         }
 
         // -- 

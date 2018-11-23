@@ -8,17 +8,17 @@ using System.Text;
 
 namespace AppMGL.MGLApplication.MApplication
 {
-    public class DeletarDesejoApplication
+    public class DeletarListaApplication
     {
-        public DesejoReturn DeletarJogo(int idJogo)
+        public ListaReturn DeletarJogo(int idJogo)
         {
-            DesejoReturn myMessage = new DesejoReturn();
-            Jogo myJogo = new Jogo();
+            ListaReturn myMessage = new ListaReturn();
+            Lista myJogo = new Lista();
             try
             {
 
                 myJogo.idJogo = idJogo;
-              
+
 
 
                 var json = JsonConvert.SerializeObject(myJogo);
@@ -28,7 +28,7 @@ namespace AppMGL.MGLApplication.MApplication
                 client.MaxResponseContentBufferSize = 256000;
 
                 //CONFIGURA A URL BASE
-                var uri = new Uri("http://tccmgl-com.umbler.net/webservices/mglservices/service/service_deleteDesejo.php");
+                var uri = new Uri("http://tccmgl-com.umbler.net/webservices/mglservices/service/service_deleteLista.php");
 
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
 
@@ -39,7 +39,7 @@ namespace AppMGL.MGLApplication.MApplication
                 {
                     var content2 = response.Content.ReadAsStringAsync();
 
-                    myMessage = JsonConvert.DeserializeObject<DesejoReturn>(content2.Result);
+                    myMessage = JsonConvert.DeserializeObject<ListaReturn>(content2.Result);
                 }
 
             }

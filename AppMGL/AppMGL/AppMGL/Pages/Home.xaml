@@ -6,14 +6,17 @@
     <ContentPage.Content>
         <StackLayout Orientation="Vertical" Margin="5">
            <!--- <Label Text="Jogos"  FontSize="22" TextColor="Black" FontAttributes="Bold" Margin="16,10,16,10" HorizontalOptions="CenterAndExpand"></Label>-->
-            <ListView x:Name="listaJogos" HasUnevenRows="true" Margin="0,0,0,4" SeparatorVisibility="None">
+            <ListView x:Name="listaJogos" HasUnevenRows="true" Margin="0,0,0,4" SeparatorVisibility="None"
+                      RefreshCommand="{Binding RefreshCommand}" IsRefreshing="{Binding IsBusy}" 
+                      IsPullToRefreshEnabled="true">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell >
-                            <!--<ViewCell.ContextActions>
-                                <MenuItem Clicked="OnInfo" CommandParameter="{Binding .}"   Text="Info" />
-                                <MenuItem Clicked="OnDelete" CommandParameter="{Binding .}"  Text="Deletar"  />
-                            </ViewCell.ContextActions>-->
+                            <ViewCell.ContextActions>
+                                <MenuItem Clicked="OnDetalhe" CommandParameter="{Binding .}"   Text="+Detalhes" />
+                                <MenuItem Clicked="OnTroca" CommandParameter="{Binding .}"   Text="ADD Favoritos" />
+                                <MenuItem Clicked="OnDelete" CommandParameter="{Binding .}"  Text="Excluir da Lista"  />
+                            </ViewCell.ContextActions>
                             <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White" >
                                 <Frame.OutlineColor>
                                     <OnPlatform x:TypeArguments="Color" Android="Gray" iOS="Gray"/>
@@ -27,9 +30,9 @@
 
                                 <StackLayout Orientation="Horizontal">
 
-                                    <StackLayout.GestureRecognizers>
+                                    <!--<StackLayout.GestureRecognizers>
                                         <TapGestureRecognizer Tapped="onTapped"/>
-                                    </StackLayout.GestureRecognizers>
+                                    </StackLayout.GestureRecognizers>-->
                                     
                                     <Grid VerticalOptions="CenterAndExpand" Padding="5"
                                             HorizontalOptions="FillAndExpand" BackgroundColor="Transparent">

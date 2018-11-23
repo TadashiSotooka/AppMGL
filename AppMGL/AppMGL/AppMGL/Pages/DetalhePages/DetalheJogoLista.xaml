@@ -3,10 +3,92 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppMGL.Pages.DetalhePages.DetalheJogoLista">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Detalhe"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView >
+            <StackLayout Padding="5">
+                <Label Text="{Binding nomeJogo}"  FontAttributes="Bold" TextColor="Black" FontSize="Large"  />
+                <BoxView Color="{StaticResource accent}" HorizontalOptions="FillAndExpand" HeightRequest="2" Margin="0,0,0,10"/>
+                <!--<Label Text="{Binding idJogo}" FontSize="Default" />
+                <BoxView Color="{StaticResource accent}" HorizontalOptions="FillAndExpand" HeightRequest="1"/>-->
+
+                <Image  Source="{Binding imagem}" />
+
+                <Label Text="Informações" TextColor="Black" FontSize="Medium" Margin="0,15,0,5"/>
+                <Frame OutlineColor="Gray" Margin="0,0,0,10">
+                    <StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Gênero:" FontAttributes="Bold" TextColor="Black"/>
+                            <Label Text="{Binding trailer}" FontSize="Default" />
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Nota:" FontAttributes="Bold" TextColor="Black"/>
+                            <Label Text="{Binding notaGeral}" FontSize="Default"  />
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Plataforma:" FontAttributes="Bold" TextColor="Black"/>
+                            <Label Text="{Binding plataforma}" FontSize="Default" />
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Data de Lançamento:" FontAttributes="Bold" TextColor="Black"/>
+                            <Label Text="{Binding dataLancamento}" FontSize="Default" />
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Desenvolvedora:" FontAttributes="Bold" TextColor="Black"/>
+                            <Label Text="{Binding desenvolvedora}" FontSize="Default" />
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Estúdio:" FontAttributes="Bold" TextColor="Black"/>
+                            <Label Text="{Binding estudio}" FontSize="Default" />
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+
+                <Label Text="Sinopse" TextColor="Black" FontSize="Medium" Margin="0,15,0,5"/>
+                <Frame OutlineColor="Gray" Margin="0,0,0,10">
+                    <StackLayout >
+                        <Label Text="{Binding descricaoJogo}" FontSize="Default" />
+                    </StackLayout>
+                </Frame>
+
+                <Label Text="Status do Jogo" TextColor="Black" FontSize="Medium" Margin="0,15,0,5"/>
+                <Frame OutlineColor="Gray" Margin="0,0,0,10">
+                    <StackLayout >
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Status na Lista:" FontAttributes="Bold" TextColor="Black"/>
+                            <Label Text="{Binding DescricaoCategoria}" FontSize="Default" />
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal">
+                            <Button Text="Trocar Status" Clicked="BtnStatus" CommandParameter="{Binding idJogo}"  
+                                    HorizontalOptions="FillAndExpand" BackgroundColor="{StaticResource primary}" 
+                                    FontSize="Small" TextColor="White" Margin="60,10,60,15"/>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Favorito:" FontAttributes="Bold" TextColor="Black"/>
+                            <Label Text="{Binding descricaoFavorito}" FontSize="Default" />
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal">
+                            <Button Text="Favoritos" Clicked="BtnFavorito" CommandParameter="{Binding idJogo}"  
+                                    HorizontalOptions="FillAndExpand" BackgroundColor="{StaticResource primary}" 
+                                    FontSize="Small" TextColor="White" Margin="60,10,60,15"/>
+                        </StackLayout>
+                       
+                    </StackLayout>
+                </Frame>
+
+                <Button Text="Atualizar Status" Clicked="BtnAtualizar" CommandParameter="{Binding idJogo}" HeightRequest="60" HorizontalOptions="FillAndExpand" Margin="26,10,26,10"
+                     BackgroundColor="{StaticResource primary}" FontSize="Medium" TextColor="White"/>
+
+                <Button Text="Remover da Lista" Clicked="BtnRemover" CommandParameter="{Binding idJogo}" HeightRequest="60" HorizontalOptions="FillAndExpand" Margin="26,10,26,10"
+                     BackgroundColor="{StaticResource primary}" FontSize="Medium" TextColor="White"/>
+
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

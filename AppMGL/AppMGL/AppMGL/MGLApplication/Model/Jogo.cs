@@ -15,6 +15,7 @@ namespace AppMGL.MGLApplication.Model
         public string imagem { get; set; }
         public string trailer { get; set; }
         public string descricaoJogo { get; set; }
+        public string plataforma { get; set; }
 
     }
 }

@@ -13,7 +13,7 @@
                         <ViewCell>
                             <ViewCell.ContextActions>
                                 <MenuItem Clicked="OnDetalhe" CommandParameter="{Binding .}"   Text="+Detalhes" />
-                                <MenuItem Clicked="OnAdd" CommandParameter="{Binding .}"  Text="Add em Desejo"  />
+                                <MenuItem Clicked="OnAdd" CommandParameter="{Binding .}"  Text="Add Desejo"  />
                             </ViewCell.ContextActions>
                             <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
                                 <Frame.OutlineColor>

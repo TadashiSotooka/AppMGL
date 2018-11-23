@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppMGL.Pages.Teste2"
+             Title="TESTE">
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout Padding="2">
+            <Frame>
+                <Label Text="NOME" FontSize="Medium" 
+               HorizontalOptions="Center" TextColor="Blue" />
+            </Frame>
+            <Label Text="Endereço" TextColor="Blue"/>
+            <Frame OutlineColor="Accent">
+                <StackLayout>
+                    <Label Text="Sed ut perspiciatis unde omnis iste" FontSize="Default" />
+                    <Label Text="Sed ut perspiciatis unde omnis iste" FontSize="Default" />
+                    <Label Text="Sed ut perspiciatis unde omnis iste" FontSize="Default" />
+                    <Label Text="Sed ut perspiciatis unde omnis iste" FontSize="Default" />
+                </StackLayout>
+            </Frame>
+            <Label Text="Localização : Latitue/Longitude" TextColor="Blue"/>
+            <Frame OutlineColor="Accent">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Sed ut perspiciatis unde omnis iste" FontSize="Default" HorizontalOptions="StartAndExpand"/>
+                    <Label Text="Sed ut perspiciatis unde omnis iste" FontSize="Default" HorizontalOptions="EndAndExpand" />
+                </StackLayout>
+            </Frame>
+            <Label Text="Telefone/webSite" TextColor="Blue"/>
+            <Frame OutlineColor="Accent">
+                <StackLayout Orientation="Horizontal">
+                        <Label Text="Sed ut perspiciatis unde omnis iste" FontSize="Default" HorizontalOptions="StartAndExpand" />
+                        <Label Text="Sed ut perspiciatis unde omnis iste" FontSize="Default" HorizontalOptions="EndAndExpand"/>
+                </StackLayout>
+            </Frame>
+            <Label Text="Empresa" TextColor="Blue"/>
+                <Label Text="Sed ut perspiciatis unde omnis iste" FontSize="Default" />
+                <Label Text="Sed ut perspiciatis unde omnis iste" FontSize="Default"  />
+                <Label Text="Sed ut perspiciatis unde omnis iste" FontSize="Default" />
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

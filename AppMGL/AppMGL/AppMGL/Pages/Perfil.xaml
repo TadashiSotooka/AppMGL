@@ -138,6 +138,28 @@
 
             </StackLayout>
 
+            <StackLayout Orientation="Horizontal">
+
+                <Label Text="Teste"  Margin="16,10,16,10" FontSize="14" FontAttributes="Bold" TextColor="Gray"
+               VerticalOptions="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="onClickTeste" />
+                    </Label.GestureRecognizers>
+                </Label>
+
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+
+                <Label Text="Teste2"  Margin="16,10,16,10" FontSize="14" FontAttributes="Bold" TextColor="Gray"
+               VerticalOptions="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="onClickTeste2" />
+                    </Label.GestureRecognizers>
+                </Label>
+
+            </StackLayout>
+
             <!--<BoxView Color="{StaticResource accent}" HorizontalOptions="FillAndExpand" HeightRequest="1"/>-->
             
         </StackLayout>

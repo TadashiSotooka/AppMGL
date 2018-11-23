@@ -11,8 +11,8 @@
                     <DataTemplate>
                         <ViewCell>
                             <ViewCell.ContextActions>
-                                <MenuItem Clicked="OnInfo" CommandParameter="{Binding .}"   Text="Info" />
-                                <MenuItem Clicked="OnDelete" CommandParameter="{Binding .}"  Text="Deletar"  />
+                                <MenuItem Clicked="OnDetalhe" CommandParameter="{Binding .}"   Text="+Detalhe" />
+                                <MenuItem Clicked="OnTroca" CommandParameter="{Binding .}"  Text="Remover dos Favoritos"  />
                             </ViewCell.ContextActions>
                             <Frame IsClippedToBounds="True" HasShadow="True" BackgroundColor="White">
                                 <Frame.OutlineColor>

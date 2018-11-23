@@ -162,7 +162,33 @@ namespace AppMGL.Pages
 
         }
 
-       
+        private async void onClickTeste(object sender, EventArgs args)
+        {
+            //await Navigation.PushModalAsync(new Teste2());
+            await AppMGL.App.NavegarPaginaMasterDetail(new Teste2(), "");
+
+            //await DisplayAlert("Clicado", "Sair", "OK");
+
+            /*ClienteApplication clienteApplication = new ClienteApplication();
+            clienteApplication.DeleteAll();
+
+            await GoodFoodV4.App.NavegarPaginaMasterDetail(new AutenticacaoPage(), "modal");*/
+
+        }
+
+        private async void onClickTeste2(object sender, EventArgs args)
+        {
+            //await Navigation.PushModalAsync(new TodosJogos());
+            await AppMGL.App.NavegarPaginaMasterDetail(new TodosJogos(), "");
+
+            //await DisplayAlert("Clicado", "Sair", "OK");
+
+            /*ClienteApplication clienteApplication = new ClienteApplication();
+            clienteApplication.DeleteAll();
+
+            await GoodFoodV4.App.NavegarPaginaMasterDetail(new AutenticacaoPage(), "modal");*/
+
+        }
 
         private async void onClickPerfil(object sender, EventArgs args)
         {
@@ -176,18 +202,20 @@ namespace AppMGL.Pages
 
         }
 
-       /* private async void onClickTeste(object sender, EventArgs args)
-        {
-            await Navigation.PushModalAsync(new Teste());
-           
+        
 
-        }
+        /* private async void onClickTeste(object sender, EventArgs args)
+         {
+             await Navigation.PushModalAsync(new Teste());
 
-        private async void onClickTesteCard(object sender, EventArgs args)
-        {
-            await Navigation.PushModalAsync(new TesteCard());
-           
 
-        }*/
+         }
+
+         private async void onClickTesteCard(object sender, EventArgs args)
+         {
+             await Navigation.PushModalAsync(new TesteCard());
+
+
+         }*/
     }
 }

@@ -109,7 +109,13 @@ namespace AppMGL.Pages.ProcurarPages
         private async void OnDetalhe(object sender, EventArgs e)
         {
 
-            await DisplayAlert("Clicado", "Info", "OK");
+            //await DisplayAlert("Clicado", "Info", "OK");
+            /*var item = e.Item;
+            var codJogo = (item as Jogo);*/
+            var mi = ((MenuItem)sender);
+            var codJogo = mi.CommandParameter as Jogo;
+
+            await Navigation.PushAsync(new DetalheJogo(codJogo));
         }
 
         private async void OnAdd(object sender, EventArgs e)
