@@ -1,4 +1,5 @@
-﻿using AppMGL.Pages.ListaPages;
+﻿using AppMGL.Pages.AmigoPages;
+using AppMGL.Pages.ListaPages;
 using AppMGL.Pages.ProcurarPages;
 using System;
 using System.Collections.Generic;
@@ -127,8 +128,8 @@ namespace AppMGL.Pages
 
         private async void onClickAmigos(object sender, EventArgs args)
         {
-            await DisplayAlert("Clicado", "Sair", "OK");
-
+            //await DisplayAlert("Clicado", "Sair", "OK");
+            await AppMGL.App.NavegarPaginaMasterDetail(new Amigos(), "");
             /*ClienteApplication clienteApplication = new ClienteApplication();
             clienteApplication.DeleteAll();
 

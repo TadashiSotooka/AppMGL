@@ -159,13 +159,20 @@ namespace AppMGL.Pages
         {
             var mi = ((MenuItem)sender);
             var myJogo = mi.CommandParameter as Lista;
-            
+
+            var usuario = ((App)Application.Current).Conexao.Table<Usuario>().ToList().First();
+            var codUsuario = usuario.idUsuario;
+
+            ListaRequest listaRequest = new ListaRequest();
+            listaRequest.idUsuario = Convert.ToInt32(codUsuario);
+            listaRequest.idJogo = Convert.ToInt32(myJogo.idJogo);
+
             var minhaConexao = Plugin.Connectivity.CrossConnectivity.Current.IsConnected;
             if (minhaConexao.Equals(true))
             {
                 DeletarListaApplication appDelete = new DeletarListaApplication();
                 //var retorno = appDelete.DeletarJogo(myJogo.idJogo);
-                message = appDelete.DeletarJogo(myJogo.idJogo);
+                message = appDelete.DeletarJogo(listaRequest);
 
                 if (message.message.Equals("Excluido da sua Lista!"))
                 {

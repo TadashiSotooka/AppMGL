@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppMGL.Pages.AmigoPages.AmigoRejeitado"
+             Title="Rejeitados">
+    <ContentPage.Content>
+
+        <!--<StackLayout Orientation="Horizontal">
+                <Button Text="OnPendente" Clicked="BtnPendente" CommandParameter="{Binding idJogo}" 
+                                             BackgroundColor="{StaticResource primary}"  TextColor="White"/>
+
+                <Button Text="OnBloqueado" Clicked="BtnBloqueado" CommandParameter="{Binding idJogo}" 
+                                            BackgroundColor="{StaticResource primary}"  TextColor="White"/>
+            </StackLayout>-->
+
+        <StackLayout Orientation="Vertical" Margin="5">
+            <!--- <Label Text="Jogos"  FontSize="22" TextColor="Black" FontAttributes="Bold" Margin="16,10,16,10" HorizontalOptions="CenterAndExpand"></Label>-->
+            <ListView x:Name="listaAmigos" HasUnevenRows="true" Margin="0,4,0,4" SeparatorVisibility="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.ContextActions>
+                                <MenuItem Clicked="OnAceitar" CommandParameter="{Binding .}"   Text="Aceitar" />
+                                <MenuItem Clicked="OnPendente" CommandParameter="{Binding .}"   Text="Pendente" />
+                                <!--<MenuItem Clicked="OnDelete" CommandParameter="{Binding .}"  Text="Excluir"  />-->
+                            </ViewCell.ContextActions>
+
+                            <!--<Frame OutlineColor="Gray" Margin="0,0,0,10">-->
+                            <StackLayout Margin="0,15,0,15">
+                                <StackLayout Orientation="Horizontal">
+                                    <Image Source="user.png"  Margin="5,0,5,0"
+                                                 HeightRequest="30" WidthRequest="30"/>
+                                    <Label Text="{Binding nomeUsuario}" FontSize="Default" TextColor="Black" />
+                                </StackLayout>
+
+                                <!--<StackLayout Orientation="Horizontal">
+                                            <Label Text="Situação do Pedido:" FontAttributes="Bold" TextColor="Black"/>
+                                            <Label Text="{Binding descricaoSituacao}" FontSize="Default" />
+                                        </StackLayout>-->
+                                <!--<Image Source="user.png" HorizontalOptions="Start" ></Image>
+                                        <Image Source="user.png" HorizontalOptions="StartAndExpand" Margin="16,32,16,0"
+                                                 HeightRequest="72" WidthRequest="72"/>-->
+                                <!--<Label Text="{Binding nomeUsuario}" FontSize="Default"  />
+                                        <Label Text="{Binding descricaoSituacao}" FontSize="Default"  />-->
+                            </StackLayout>
+                            <!--</Frame>-->
+
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+
+    </ContentPage.Content>
+
+    <!--<ContentPage.ToolbarItems>
+        <ToolbarItem Text="Pendente" Activated="OnClickPendente" Order="Secondary"/>
+        <ToolbarItem Text="Amigos" Activated="OnClickAmigos"  Order="Secondary"/>
+    </ContentPage.ToolbarItems>-->
+</ContentPage>

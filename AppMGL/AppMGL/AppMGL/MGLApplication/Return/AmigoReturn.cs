@@ -5,12 +5,14 @@ using System.Text;
 
 namespace AppMGL.MGLApplication.Return
 {
-    public class DesejoReturn
+    public class AmigoReturn
     {
-        public List<Jogo> listas { get; set; }
+        public List<Amigo> amigos { get; set; }
         public string message { get; set; }
-        public DesejoReturn()
+
+        public AmigoReturn()
         {
+            amigos = new List<Amigo>();
             message = "";
         }
     }

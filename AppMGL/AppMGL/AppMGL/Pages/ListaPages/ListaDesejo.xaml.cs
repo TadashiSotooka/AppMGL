@@ -1,5 +1,6 @@
 ﻿using AppMGL.MGLApplication.MApplication;
 using AppMGL.MGLApplication.Model;
+using AppMGL.MGLApplication.Request;
 using AppMGL.MGLApplication.Return;
 using AppMGL.Pages.DetalhePages;
 using System;
@@ -17,6 +18,7 @@ namespace AppMGL.Pages.ListaPages
 	public partial class ListaDesejo : ContentPage
 	{
         public string codUsuario;
+        //ListaReturn message = new ListaReturn();
 
         DesejoReturn message = new DesejoReturn();
 
@@ -68,14 +70,21 @@ namespace AppMGL.Pages.ListaPages
         private async void OnDelete(object sender, EventArgs e)
         {
             var mi = ((MenuItem)sender);
-            var myJogo = mi.CommandParameter as Lista;
+            var myJogo = mi.CommandParameter as Jogo;
+
+            var usuario = ((App)Application.Current).Conexao.Table<Usuario>().ToList().First();
+            var codUsuario = usuario.idUsuario;
+
+            DesejoRequest listaRequest = new DesejoRequest();
+            listaRequest.idUsuario = Convert.ToInt32(codUsuario);
+            listaRequest.idJogo = Convert.ToInt32(myJogo.idJogo);
 
             var minhaConexao = Plugin.Connectivity.CrossConnectivity.Current.IsConnected;
             if (minhaConexao.Equals(true))
             {
                 DeletarDesejoApplication appDelete = new DeletarDesejoApplication();
                 //var retorno = appDelete.DeletarJogo(myJogo.idJogo);
-                message = appDelete.DeletarJogo(myJogo.idJogo);
+                message = appDelete.DeletarJogo(listaRequest);
 
                 if (message.message.Equals("Excluido da lista de desejo!"))
                 {

@@ -7,25 +7,24 @@ using System.Text;
 
 namespace AppMGL.MGLApplication.MApplication
 {
-    public class ListaDesejoApplication
+    public class AmigoPendenteApplication
     {
-
-        public DesejoReturn RetornarListaDesejo(string codUsuario)
+        public AmigoReturn RetornarAmigo(string codUsuario)
         {
 
-            DesejoReturn retorno = new DesejoReturn();
+            AmigoReturn retorno = new AmigoReturn();
 
             HttpClient client = new HttpClient();
 
             client.MaxResponseContentBufferSize = 256000;
 
-            var uri = new Uri("http://tccmgl-com.umbler.net/webservices/mglservices/lista/readDesejo.php?idUsuario=" + codUsuario);
+            var uri = new Uri("http://tccmgl-com.umbler.net/webservices/mglservices/amigo/readByPendente.php?idUsuario=" + codUsuario);
 
             var response = client.GetAsync(uri).Result;
             if (response.IsSuccessStatusCode)
             {
                 var content = response.Content.ReadAsStringAsync();
-                retorno = JsonConvert.DeserializeObject<DesejoReturn>(content.Result);
+                retorno = JsonConvert.DeserializeObject<AmigoReturn>(content.Result);
             }
 
             return retorno;

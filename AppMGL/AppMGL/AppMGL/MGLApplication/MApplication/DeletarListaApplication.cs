@@ -1,4 +1,5 @@
 ﻿using AppMGL.MGLApplication.Model;
+using AppMGL.MGLApplication.Request;
 using AppMGL.MGLApplication.Return;
 using Newtonsoft.Json;
 using System;
@@ -10,18 +11,18 @@ namespace AppMGL.MGLApplication.MApplication
 {
     public class DeletarListaApplication
     {
-        public ListaReturn DeletarJogo(int idJogo)
+        public ListaReturn DeletarJogo(ListaRequest listaRequest)
         {
             ListaReturn myMessage = new ListaReturn();
-            Lista myJogo = new Lista();
+            //Lista myJogo = new Lista();
             try
             {
 
-                myJogo.idJogo = idJogo;
+                //myJogo.idJogo = idJogo;
 
 
 
-                var json = JsonConvert.SerializeObject(myJogo);
+                var json = JsonConvert.SerializeObject(listaRequest);
 
                 HttpClient client = new HttpClient();
 
