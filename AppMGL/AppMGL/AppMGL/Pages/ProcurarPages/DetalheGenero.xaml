@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppMGL.Pages.ProcurarPages.DetalheGenero"
+             Title="Gênero">
+    <ContentPage.Content>
+            <ScrollView><StackLayout>
+                
+                <Button Text="Ação" Clicked="BtnAcao"  HeightRequest="60" HorizontalOptions="FillAndExpand" Margin="26,10,26,5"
+                     BackgroundColor="{StaticResource primary}" FontSize="Medium" TextColor="White"/>
+
+                <Button Text="Aventura" Clicked="BtnAventura"  HeightRequest="60" HorizontalOptions="FillAndExpand" Margin="26,10,26,5"
+                     BackgroundColor="{StaticResource primary}" FontSize="Medium" TextColor="White"/>
+                
+                <Button Text="Estratégia" Clicked="BtnEstrategia"  HeightRequest="60" HorizontalOptions="FillAndExpand" Margin="26,10,26,5"
+                     BackgroundColor="{StaticResource primary}" FontSize="Medium" TextColor="White"/>
+
+                <Button Text="RPG" Clicked="BtnRPG"  HeightRequest="60" HorizontalOptions="FillAndExpand" Margin="26,10,26,5"
+                     BackgroundColor="{StaticResource primary}" FontSize="Medium" TextColor="White"/>
+
+                <Button Text="Esporte" Clicked="BtnEsporte"  HeightRequest="60" HorizontalOptions="FillAndExpand" Margin="26,10,26,5"
+                     BackgroundColor="{StaticResource primary}" FontSize="Medium" TextColor="White"/>
+
+                <Button Text="Corrida" Clicked="BtnCorrida"  HeightRequest="60" HorizontalOptions="FillAndExpand" Margin="26,10,26,5"
+                     BackgroundColor="{StaticResource primary}" FontSize="Medium" TextColor="White"/>
+
+                <Button Text="Jogo on-line" Clicked="BtnOnline"  HeightRequest="60" HorizontalOptions="FillAndExpand" Margin="26,10,26,5"
+                     BackgroundColor="{StaticResource primary}" FontSize="Medium" TextColor="White"/>
+
+                <Button Text="Simulação" Clicked="BtnSimulacao"  HeightRequest="60" HorizontalOptions="FillAndExpand" Margin="26,10,26,5"
+                     BackgroundColor="{StaticResource primary}" FontSize="Medium" TextColor="White"/>
+
+                <Button Text="Outros gêneros" Clicked="BtnOutros"  HeightRequest="60" HorizontalOptions="FillAndExpand" Margin="26,10,26,5"
+                     BackgroundColor="{StaticResource primary}" FontSize="Medium" TextColor="White"/>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

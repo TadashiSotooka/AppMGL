@@ -57,35 +57,34 @@ namespace AppMGL.Pages
 
         private async void onClickProcurar(object sender, EventArgs args)
         {
-            var action = await DisplayActionSheet( "Procurar", "Cancel", "", "Buscar por Jogo", "Todos os Jogos", 
-                                                  "Gênero", "Top Jogos", "Mais Populares", "Lançamentos", "Em Breve" );
-            if (action == "Buscar por Jogo")
-            {
-                await Navigation.PushModalAsync(new Teste());
-            }
+            var action = await DisplayActionSheet( "Procurar", "Cancel", "", "Todos os Jogos", "Buscar por Ano", 
+                                                  "Gênero", "Top Jogos", "Lançamentos", "Em Breve" );
             if (action == "Todos os Jogos")
             {
                 await AppMGL.App.NavegarPaginaMasterDetail(new TodosJogos(), "");
             }
+
+            if (action == "Buscar por Ano")
+            {
+                await AppMGL.App.NavegarPaginaMasterDetail(new Ano(), "");
+            }
+            
             if (action == "Gênero")
             {
-                await Navigation.PushModalAsync(new Teste());
+                await AppMGL.App.NavegarPaginaMasterDetail(new DetalheGenero(), "");
             }
             if (action == "Top Jogos")
             {
-                await Navigation.PushModalAsync(new Teste());
+                await AppMGL.App.NavegarPaginaMasterDetail(new Top(), "");
             }
-            if (action == "Mais Populares")
-            {
-                await Navigation.PushModalAsync(new Teste());
-            }
+
             if (action == "Lançamentos")
             {
-                await Navigation.PushModalAsync(new Teste());
+                await AppMGL.App.NavegarPaginaMasterDetail(new Lancamento(), "");
             }
             if (action == "Em Breve")
             {
-                await Navigation.PushModalAsync(new Teste());
+                await AppMGL.App.NavegarPaginaMasterDetail(new Breve(), "");
             }
             //await DisplayAlert("Clicado", "Sair", "OK");
 
